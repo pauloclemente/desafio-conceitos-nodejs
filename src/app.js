@@ -55,7 +55,8 @@ app.delete("/repositories/:id", (request, response) => {
     return response.status(400).json({ message: "This repository was not found"})
   }
   repositories.splice(index,1);
-  return response.status(204).send;
+  
+  return response.status(204).json().send();
 });
 
 app.post("/repositories/:id/like", (request, response) => {
